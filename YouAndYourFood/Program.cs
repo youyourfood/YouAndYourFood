@@ -1,8 +1,13 @@
+using YouAndYourFood.Repository;
+using YouAndYourFood.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IRestaurentRepository, RestaurentRepository>();
+builder.Services.AddScoped<IRestaurentService, RestaurentService>();
 
 var app = builder.Build();
 
