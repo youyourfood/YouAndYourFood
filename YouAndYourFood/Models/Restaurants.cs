@@ -20,7 +20,7 @@ namespace YouAndYourFood.Models
 
     public class RestaurantsData
     {
-        [JsonProperty("resturants")]
+        [JsonProperty("restaurants")]
         public Restaurant[]? Restaurants { get; set; }
     }
 
