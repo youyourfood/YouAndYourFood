@@ -1,0 +1,117 @@
+{
+  "restaurants": [
+    {
+      "name": "Acapulco Fresh",
+      "image": "blob:https://microsoft.sharepoint.com/b4759f7d-56ce-44dc-ad83-2752ec16a7a1",
+      "telephone": "5615551212",
+      "priceRange": "$8 - $30",
+      "servesCuisine": "Mexican Cuisine",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "Spicy Jalapeno Burrito",
+            "description": "Fried Jalepe�os, Onion + Cilantro, Sour Cream, Cheese, Pinto or Black Beans + Rice",
+            "price": "9.35",
+            "cooktimeinminutes": "2",
+            "totalOrders": "2"
+          },
+          {
+            "name": "Burrito Grande",
+            "description": "Pinto or Black Beans, Rice, Guacamole, Cheese + Pico De Gallo Salsa",
+            "price": "9.35",
+            "cooktimeinminutes": "4",
+            "totalOrders": "3"
+          },
+          {
+            "name": "Burrito Acapulco",
+            "description": "Guacamole, Cheese + Pico De Gallo Salsa",
+            "price": "8.14",
+            "cooktimeinminutes": "2",
+            "totalOrders": "11"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Boardwalk",
+      "image": "blob:https://microsoft.sharepoint.com/b4759f7d-56ce-44dc-ad83-2752ec16a7a1",
+      "telephone": "5615551212",
+      "priceRange": "$5 - $30",
+      "servesCuisine": "Mexican Cuisine",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "Cheddar Garlic Waffle Fries",
+            "description": "Beecher�s Flagship Cheese Sauce, Crisp Bacon, Scallions",
+            "price": "6",
+            "cooktimeinminutes": "3",
+            "totalOrders": "4"
+          },
+          {
+            "name": "Summer Watermelon Salad",
+            "description": "Watermelon, Heirloom Cherry Tomatoes, Arugula , Feta Cheese, Watermelon Radish, Shallot, Cucumber Spiced Pistachio, Sherry Vinaigrette, Fresh Basil, Mint",
+            "price": "8",
+            "cooktimeinminutes": "2",
+            "totalOrders": "4"
+          },
+          {
+            "name": "Fries",
+            "description": "Seasoned French Fries",
+            "price": "5",
+            "cooktimeinminutes": "2",
+            "totalOrders": "3"
+          }
+        ]
+      }
+    },
+    {
+      "name": "chandys",
+      "telephone": "5615551212",
+      "priceRange": "$4 - $30",
+      "servesCuisine": "American",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "American Comfort Vegetarian Plate",
+            "description": "Roasted Mixed Vegetables, Mashed Potatoes + Beet Salad",
+            "price": "10.18",
+            "cooktimeinminutes": "3",
+            "totalOrders": "3"
+          },
+          {
+            "name": "BBQ Brisket Sandwich",
+            "description": "Served On Macrina Brioche Bun With House Aioli, BBQ Sauce + Coleslaw. Comes With Chips + Chocolate Chip Cookie",
+            "price": "10.18",
+            "cooktimeinminutes": "5",
+            "totalOrders": "3"
+          },
+          {
+            "name": "Signature Magnolia Banana Pudding",
+            "description": "Signature Magnolia Banana Pudding",
+            "price": "4.40",
+            "cooktimeinminutes": "1",
+            "totalOrders": "12"
+          }
+        ]
+      }
+    }
+  ]
+}
