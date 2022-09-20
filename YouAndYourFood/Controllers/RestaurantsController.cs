@@ -19,11 +19,16 @@ namespace YouAndYourFood.Controllers
             this.restaurentService = restaurentService;
         }
 
-
-        [HttpGet(Name = "GetRestaurents")]
+        [HttpGet]
         public RestaurantsData Get()
         {
             return restaurentService.GetRestaurents();
         }
+
+        //[HttpGet(Name = "GetRestaurent")]
+        //public RestaurantsData GetRestaurent()
+        //{
+        //    return restaurentService.GetRestaurent();
+        //}
     }
 }

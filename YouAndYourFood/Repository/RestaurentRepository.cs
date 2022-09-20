@@ -8,10 +8,17 @@ namespace YouAndYourFood.Repository;
 
 public class RestaurentRepository : IRestaurentRepository
 {
+    public RestaurantsData GetRestaurent()
+    {
+        string data = System.IO.File.ReadAllText("./Models/json.json");
+        RestaurantsData restaurents = JsonConvert.DeserializeObject<RestaurantsData>(data);
+
+        return restaurents;
+    }
 
     RestaurantsData IRestaurentRepository.GetRestaurents()
     {
-        string data = System.IO.File.ReadAllText(@"C:\Users\srkolluru\Desktop\YouAndYourFood\YouAndYourFood\yyf.json");
+        string data = System.IO.File.ReadAllText("./Models/json.json");
         RestaurantsData restaurents = JsonConvert.DeserializeObject<RestaurantsData>(data);
 
         return restaurents;
