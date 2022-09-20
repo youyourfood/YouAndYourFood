@@ -32,7 +32,7 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-//        public string Image { get; set; }
+        public string Image { get; set; } = "https://fastfoodmenuprice.com/wp-content/uploads/2014/06/taco-bell-logo.jpeg";
 
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
