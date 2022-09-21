@@ -32,7 +32,8 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-//        public string Image { get; set; }
+        [JsonProperty("image")]
+        public string Image { get; set; }
 
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
@@ -91,7 +92,8 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
- //       public string? Image { get; set; }
+        [JsonProperty("image")]
+        public string? Image { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -107,7 +109,7 @@ namespace YouAndYourFood.Models
 
        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set{ } }
 
-  //      public int? Calories { get; set; }
+       public int? Calories { get; set; }
     }
 
 }
