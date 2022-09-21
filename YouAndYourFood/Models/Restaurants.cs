@@ -32,7 +32,7 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-//        public string Image { get; set; }
+        public string Image { get; set; } = "https://fastfoodmenuprice.com/wp-content/uploads/2014/06/taco-bell-logo.jpeg";
 
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
@@ -68,7 +68,7 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
- //       public string? Image { get; set; }
+        public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
 
         [JsonProperty("description")]
         public string Description { get; set; }
