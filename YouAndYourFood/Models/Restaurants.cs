@@ -32,8 +32,6 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string Image { get; set; } = "https://fastfoodmenuprice.com/wp-content/uploads/2014/06/taco-bell-logo.jpeg";
-
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
 
@@ -49,9 +47,32 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-        public int? MinWaitingTime { get; set; } = 10;
+        public int? MinWaitingTime { 
+            get 
+            {
+                int waitingTime = int.MaxValue;
+                foreach(Item item in Menu.Items)
+                {
+                    waitingTime = (int)((item.WaitingTime < waitingTime) ? item.WaitingTime : waitingTime);
+                }
+                return waitingTime;
+            } 
+            set { } 
+        }
 
-        public int? MaxWaitingTime { get; set; } = 15;
+        public int? MaxWaitingTime { 
+            get 
+            {
+                int waitingTime = int.MinValue;
+                foreach (Item item in Menu.Items)
+                {
+                    waitingTime = (int)((item.WaitingTime > waitingTime) ? item.WaitingTime : waitingTime);
+                }
+                return waitingTime;
+
+            }
+            set { } 
+        }
     }
 
     public class Menu
@@ -68,6 +89,9 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("image")]
+        public string? Image { get; set; }
+        
         public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
 
         [JsonProperty("description")]
@@ -84,7 +108,7 @@ namespace YouAndYourFood.Models
 
        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set{ } }
 
-  //      public int? Calories { get; set; }
+       public int? Calories { get; set; }
     }
 
 }
