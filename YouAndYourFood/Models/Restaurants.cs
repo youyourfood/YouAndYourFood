@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Net;
 
 namespace YouAndYourFood.Models
@@ -32,8 +33,6 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string Image { get; set; } = "https://fastfoodmenuprice.com/wp-content/uploads/2014/06/taco-bell-logo.jpeg";
-
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
 
@@ -49,9 +48,24 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-        public int? MinWaitingTime { get; set; } = new Random().Next(0, 20);
+        public int? MinWaitingTime
+        {
+            get
+            {
+                return Menu.Items.Min(x => x.WaitingTime);
+            }
+            set { }
+        }
 
-        public int MaxWaitingTime { get; set; } = new Random().Next(21, 60);
+        public int? MaxWaitingTime
+        {
+            get
+            {
+                return Menu.Items.Max(x => x.WaitingTime);
+
+            }
+            set { }
+        }
     }
 
     public class Menu
@@ -68,7 +82,8 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
+        [JsonProperty("image")]
+        public string? Image { get; set; } = "./Models/Images/food" + new Random().Next(1, 9) + ".jpg";
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -79,10 +94,12 @@ namespace YouAndYourFood.Models
         [JsonProperty("cooktimeinminutes")]
         public int Cooktimeinminutes { get; set; }
 
-        [JsonProperty("totalOrders")]
-        public int TotalOrders { get; set; } = new Random().Next(1, 25);
+        public int TotalOrders
+        {
+            get { return new Random().Next(1, 25); }
+        }
 
-        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } set{ } }
+        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } set { } }
 
         public int? Calories { get; set; } = new Random().Next(100, 500);
     }
