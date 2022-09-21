@@ -51,7 +51,7 @@ namespace YouAndYourFood.Models
 
         public int? MinWaitingTime { get; set; } = new Random().Next(0, 20);
 
-        public int MaxWaitingTimee { get; set; } = new Random().Next(21, 60);
+        public int MaxWaitingTime { get; set; } = new Random().Next(21, 60);
     }
 
     public class Menu
