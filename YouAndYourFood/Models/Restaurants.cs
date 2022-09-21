@@ -49,9 +49,9 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-    //    public int? MinWaitingTime { get { } set { } }
+        public int? MinWaitingTime { get; set; } = new Random().Next(0, 20);
 
-      //  public int? MaxWaitingTime { get { } set { } }
+        public int MaxWaitingTimee { get; set; } = new Random().Next(21, 60);
     }
 
     public class Menu
@@ -77,14 +77,14 @@ namespace YouAndYourFood.Models
         public string Price { get; set; }
 
         [JsonProperty("cooktimeinminutes")]
-        public string Cooktimeinminutes { get; set; }
+        public int Cooktimeinminutes { get; set; }
 
         [JsonProperty("totalOrders")]
-        public string TotalOrders { get; set; }
+        public int TotalOrders { get; set; } = new Random().Next(1, 25);
 
-       public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set{ } }
+        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } set{ } }
 
-  //      public int? Calories { get; set; }
+        public int? Calories { get; set; } = new Random().Next(100, 500);
     }
 
 }

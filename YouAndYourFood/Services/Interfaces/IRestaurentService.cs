@@ -4,6 +4,6 @@ namespace YouAndYourFood.Services;
 
 public interface IRestaurentService
 {
-    RestaurantsData GetRestaurents();
-    RestaurantsData GetRestaurent();
+    Task<RestaurantsData> GetRestaurents();
+    Task<RestaurantsData> GetRestaurent();
 }
