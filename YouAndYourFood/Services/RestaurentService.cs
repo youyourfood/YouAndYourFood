@@ -15,11 +15,6 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public RestaurantsData GetRestaurent()
-        {
-            return restaurentRepository.GetRestaurent();
-        }
-
         RestaurantsData IRestaurentService.GetRestaurents()
         {
             return restaurentRepository.GetRestaurents();

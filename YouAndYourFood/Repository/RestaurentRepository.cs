@@ -15,16 +15,8 @@ public class RestaurentRepository : IRestaurentRepository
         return restaurents;
     }
 
-    public RestaurantsData GetRestaurent()
-    {
-
-        return dataReader();
-    }
-
     RestaurantsData IRestaurentRepository.GetRestaurents()
     {
-        RestaurantsData restaurents = dataReader();
-
-        return restaurents;
+        return dataReader();
     }
 }

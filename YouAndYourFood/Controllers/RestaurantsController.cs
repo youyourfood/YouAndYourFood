@@ -24,11 +24,5 @@ namespace YouAndYourFood.Controllers
         {
             return restaurentService.GetRestaurents();
         }
-
-        //[HttpGet(Name = "GetRestaurent")]
-        //public RestaurantsData GetRestaurent()
-        //{
-        //    return restaurentService.GetRestaurent();
-        //}
     }
 }

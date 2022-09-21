@@ -1,5 +1,8 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace YouAndYourFood.Models
 {
@@ -107,9 +110,11 @@ namespace YouAndYourFood.Models
         [JsonProperty("totalOrders")]
         public string TotalOrders { get; set; }
 
-       public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set{ } }
+        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set { } }
 
-       public int? Calories { get; set; }
+        public int? Calories { get; set; }
+
+        public int? Star { get; set; } = 10;
     }
 
 }
