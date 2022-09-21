@@ -3,6 +3,10 @@ using Newtonsoft.Json;
 using System.Runtime.Serialization.Formatters.Binary;
 using YouAndYourFood.Repository;
 using YouAndYourFood.Models;
+using Azure.Storage.Blobs;
+using Azure;
+using System.ComponentModel;
+using System;
 
 namespace YouAndYourFood.Repository;
 
@@ -15,16 +19,53 @@ public class RestaurentRepository : IRestaurentRepository
         return restaurents;
     }
 
-    public RestaurantsData GetRestaurent()
+    public async Task<RestaurantsData> GetRestaurent()
     {
-
-        return dataReader();
+        return await readDinningData();
     }
 
-    RestaurantsData IRestaurentRepository.GetRestaurents()
+    async Task<RestaurantsData> IRestaurentRepository.GetRestaurents()
     {
-        RestaurantsData restaurents = dataReader();
+        return await readDinningData(); ;
+    }
 
-        return restaurents;
+    private async Task<RestaurantsData> readDinningData()
+    {
+        try
+        {
+            var token = @"youandyourfoodcontainer?sp=r&st=2022-09-20T23:42:46Z&se=2022-09-24T07:42:46Z&spr=https&sv=2021-06-08&sr=c&sig=CX%2ByyP8I8j1W%2FSvqeAFxapLIX2WsobJ%2B%2FgMnsE%2BVDZk%3D";
+            var uri = new Uri(@"https://youandyourfoodsa.blob.core.windows.net/"+token);
+            var endpoint = $"{uri.Scheme}://{uri.Host}";
+            var sasToken = uri.Query;
+
+            var credentials = new AzureSasCredential(sasToken);
+            var serviceClient = new BlobServiceClient(new Uri(endpoint), credentials);
+            BlobContainerClient containerClient = serviceClient.GetBlobContainerClient("youandyourfoodcontainer");
+            BlobClient blobClient = containerClient.GetBlobClient("yyf.json");
+            if (await blobClient.ExistsAsync())
+            {
+                var response = await blobClient.DownloadAsync();
+                using (var streamReader = new StreamReader(response.Value.Content))
+                {
+                    while (!streamReader.EndOfStream)
+                    {
+                        var data = await streamReader.ReadToEndAsync();
+
+                        var rdata = JsonConvert.DeserializeObject<RestaurantsData>(data);
+
+                        return rdata;
+
+                    }
+                }
+            }
+
+            return dataReader();
+
+        }
+        catch (Exception ex)
+        {
+
+            throw new Exception("Dinning data is not available.");
+        }
     }
 }

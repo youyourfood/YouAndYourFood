@@ -15,14 +15,14 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public RestaurantsData GetRestaurent()
+        public async Task<RestaurantsData> GetRestaurent()
         {
-            return restaurentRepository.GetRestaurent();
+            return await restaurentRepository.GetRestaurent();
         }
 
-        RestaurantsData IRestaurentService.GetRestaurents()
+        async Task<RestaurantsData> IRestaurentService.GetRestaurents()
         {
-            return restaurentRepository.GetRestaurents();
+            return await restaurentRepository.GetRestaurents();
         }
     }
 }

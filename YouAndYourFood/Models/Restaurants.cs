@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.Net;
 
 namespace YouAndYourFood.Models
@@ -47,31 +48,23 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-        public int? MinWaitingTime { 
-            get 
+        public int? MinWaitingTime
+        {
+            get
             {
-                int waitingTime = int.MaxValue;
-                foreach(Item item in Menu.Items)
-                {
-                    waitingTime = (int)((item.WaitingTime < waitingTime) ? item.WaitingTime : waitingTime);
-                }
-                return waitingTime;
-            } 
-            set { } 
+                return Menu.Items.Min(x => x.WaitingTime);
+            }
+            set { }
         }
 
-        public int? MaxWaitingTime { 
-            get 
+        public int? MaxWaitingTime
+        {
+            get
             {
-                int waitingTime = int.MinValue;
-                foreach (Item item in Menu.Items)
-                {
-                    waitingTime = (int)((item.WaitingTime > waitingTime) ? item.WaitingTime : waitingTime);
-                }
-                return waitingTime;
+                return Menu.Items.Max(x => x.WaitingTime);
 
             }
-            set { } 
+            set { }
         }
     }
 
@@ -90,8 +83,8 @@ namespace YouAndYourFood.Models
         public string Name { get; set; }
 
         [JsonProperty("image")]
-        public string? Image { get; set; }
-        
+        public string? Image { get; set; } = "./Models/Images/food" + new Random().Next(1, 9) + ".jpg";
+
         [JsonProperty("description")]
         public string Description { get; set; }
 
@@ -99,14 +92,16 @@ namespace YouAndYourFood.Models
         public string Price { get; set; }
 
         [JsonProperty("cooktimeinminutes")]
-        public string Cooktimeinminutes { get; set; }
+        public int Cooktimeinminutes { get; set; }
 
-        [JsonProperty("totalOrders")]
-        public string TotalOrders { get; set; }
+        public int TotalOrders
+        {
+            get { return new Random().Next(1, 25); }
+        }
 
-       public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set{ } }
+        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } set { } }
 
-       public int? Calories { get; set; }
+        public int? Calories { get; set; } = new Random().Next(100, 500);
     }
 
 }
