@@ -92,8 +92,6 @@ namespace YouAndYourFood.Models
         [JsonProperty("image")]
         public string? Image { get; set; }
         
-        public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
-
         [JsonProperty("description")]
         public string Description { get; set; }
 
