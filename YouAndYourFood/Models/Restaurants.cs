@@ -49,9 +49,32 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-    //    public int? MinWaitingTime { get { } set { } }
+        public int? MinWaitingTime { 
+            get 
+            {
+                int waitingTime = int.MaxValue;
+                foreach(Item item in Menu.Items)
+                {
+                    waitingTime = (int)((item.WaitingTime < waitingTime) ? item.WaitingTime : waitingTime);
+                }
+                return waitingTime;
+            } 
+            set { } 
+        }
 
-      //  public int? MaxWaitingTime { get { } set { } }
+        public int? MaxWaitingTime { 
+            get 
+            {
+                int waitingTime = int.MinValue;
+                foreach (Item item in Menu.Items)
+                {
+                    waitingTime = (int)((item.WaitingTime > waitingTime) ? item.WaitingTime : waitingTime);
+                }
+                return waitingTime;
+
+            }
+            set { } 
+        }
     }
 
     public class Menu
