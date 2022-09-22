@@ -87,7 +87,7 @@ public class RestaurentRepository : IRestaurentRepository
                 }
             }
 
-            return dataReader();
+            return RestaurantDataReader();
 
         }
         catch (Exception ex)
