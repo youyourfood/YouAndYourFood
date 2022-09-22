@@ -12,21 +12,21 @@ namespace YouAndYourFood.Repository;
 
 public class RestaurentRepository : IRestaurentRepository
 {
-    RestaurantsData RestaurantDataReader()
+    private RestaurantsData RestaurantDataReader()
     {
         string data = System.IO.File.ReadAllText("./Models/yyf.json");
         RestaurantsData restaurents = JsonConvert.DeserializeObject<RestaurantsData>(data);
         return restaurents;
     }
 
-    UsersPreferencesCollection PreferencesDataReader()
+    private UsersPreferencesCollection PreferencesDataReader()
     {
         string data = System.IO.File.ReadAllText("./Models/preferences.json");
         UsersPreferencesCollection preferences = JsonConvert.DeserializeObject<UsersPreferencesCollection>(data);
         return preferences;
     }
 
-    public UsersPreferencesCollection SaveUserPreferences(UsersPreferencesCollection preferences)
+    public async Task<UsersPreferencesCollection> SaveUserPreferences(UsersPreferencesCollection preferences)
     {
         StreamWriter file = new("./Models/preferences.json");
         string data = JsonConvert.SerializeObject(preferences);
@@ -42,7 +42,7 @@ public class RestaurentRepository : IRestaurentRepository
         return PreferencesDataReader();
     }
 
-    public UsersPreferencesCollection GetUsersPreferences()
+    public async Task<UsersPreferencesCollection> GetUsersPreferences()
     {
         return PreferencesDataReader();
     }

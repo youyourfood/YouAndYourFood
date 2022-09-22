@@ -16,12 +16,12 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public UsersPreferencesCollection GetUsersPreferences()
+        public async Task<UsersPreferencesCollection> GetUsersPreferences()
         {
             return restaurentRepository.GetUsersPreferences();
         }
 
-        public UsersPreferencesCollection AddPreference(Preference preference, string username)
+        public async Task<UsersPreferencesCollection> AddPreference(Preference preference, string username)
         {
             UsersPreferencesCollection usersPreferencesCollection = GetUsersPreferences();
             if (usersPreferencesCollection != null && usersPreferencesCollection.UsersPreferences != null 
