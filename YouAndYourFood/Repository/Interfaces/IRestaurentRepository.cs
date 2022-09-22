@@ -4,9 +4,9 @@ namespace YouAndYourFood.Repository
 {
     public interface IRestaurentRepository
     {
-        Task<UsersPreferencesCollection> GetUsersPreferences();
+        UsersPreferencesCollection GetUsersPreferences();
 
-        Task<UsersPreferencesCollection> SaveUserPreferences(UsersPreferencesCollection preferences);
+        UsersPreferencesCollection SaveUserPreferences(UsersPreferencesCollection preferences);
 
         Task<RestaurantsData> GetRestaurents();
         

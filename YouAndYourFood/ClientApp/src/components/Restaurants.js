@@ -17,7 +17,7 @@ export class Restaurants extends Component {
             <div>
                 {restaurants.map(restaurant =>
                     <div className="card">
-                        <div><center><img width="100%" height="100%" className="card-image" src={restaurant.image} /></center></div>
+                        <div><center><img width="100%" style={{ paddingBottom: '20px', minHeight: '280px' }} className="card-image" src={restaurant.image} /></center></div>
                         <table>
                             <thead>
                                 <tr>
@@ -36,7 +36,7 @@ export class Restaurants extends Component {
                         </table>
 
                         <div className="menu">
-                            <div><center><img width="100%" className="card-image" src={restaurant.menu.items[0].image} /></center></div>
+                            <div><center><img width="100%" height="150px" className="card-image" src={restaurant.menu.items[0].image} /></center></div>
                             <div>Price: {restaurant.menu.items[0].price}</div>
                             <div>Wait time: {restaurant.menu.items[0].waitingTime}</div>
                             <div>Calories: {restaurant.menu.items[0].calories}</div>
