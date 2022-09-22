@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System;
 using System.Net;
 using System.Runtime.InteropServices;
 
@@ -35,6 +36,9 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
+        [JsonProperty("image")]
+        public string Image { get; set; }
+
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
 
@@ -50,8 +54,9 @@ namespace YouAndYourFood.Models
         [JsonProperty("menu")]
         public Menu Menu { get; set; }
 
-        public int? MinWaitingTime { 
-            get 
+        public int? MinWaitingTime
+        {
+            get
             {
                 int waitingTime = int.MaxValue;
                 foreach(Item item in Menu.Items)
@@ -60,17 +65,15 @@ namespace YouAndYourFood.Models
                 }
                 return waitingTime;
             } 
+                return Menu.Items.Min(x => x.WaitingTime);
+            }
         }
 
-        public int? MaxWaitingTime { 
-            get 
+        public int? MaxWaitingTime
+        {
+            get
             {
-                int waitingTime = int.MinValue;
-                foreach (Item item in Menu.Items)
-                {
-                    waitingTime = (int)((item.WaitingTime > waitingTime) ? item.WaitingTime : waitingTime);
-                }
-                return waitingTime;
+                return Menu.Items.Max(x => x.WaitingTime);
 
             }
         }
@@ -90,7 +93,8 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
+        [JsonProperty("image")]
+        public string? Image { get; set; }
 
         [JsonProperty("description")]
         public string Description { get; set; }
@@ -99,16 +103,16 @@ namespace YouAndYourFood.Models
         public string Price { get; set; }
 
         [JsonProperty("cooktimeinminutes")]
-        public string Cooktimeinminutes { get; set; }
+        public int Cooktimeinminutes { get; set; }
 
-        [JsonProperty("totalOrders")]
-        public string TotalOrders { get; set; }
+        public int TotalOrders
+        {
+            get { return new Random().Next(1, 25); }
+        }
 
-        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } }
+        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } }
 
-        public int? Calories { get; set; }
-
-        public int? Star { get; set; }
+        public int? Calories { get; set; } = new Random().Next(100, 500);
     }
 
 }

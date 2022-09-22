@@ -20,9 +20,9 @@ namespace YouAndYourFood.Controllers
         }
 
         [HttpGet]
-        public RestaurantsData Get()
+        public async Task<RestaurantsData> Get()
         {
-            return restaurentService.GetRestaurents();
+            return await restaurentService.GetRestaurents();
         }
 
         [HttpPut]

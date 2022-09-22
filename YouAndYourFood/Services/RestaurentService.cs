@@ -48,9 +48,14 @@ namespace YouAndYourFood.Services
             return restaurentRepository.SaveUserPreferences(usersPreferencesCollection);
         }
 
-        public RestaurantsData GetRestaurents()
+        public async Task<RestaurantsData> GetRestaurent()
         {
-            return restaurentRepository.GetRestaurents();
+            return await restaurentRepository.GetRestaurent();
+        }
+
+        async Task<RestaurantsData> IRestaurentService.GetRestaurents()
+        {
+            return await restaurentRepository.GetRestaurents();
         }
     }
 }

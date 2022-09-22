@@ -1,9 +1,8 @@
 {
-  "restaurants": [
+  "resturants": [
     {
-      "id":  1,
       "name": "Acapulco Fresh",
-      "image": "/Images/restaurent1",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/r_acapulco.jpg",
       "telephone": "5615551212",
       "priceRange": "$8 - $30",
       "servesCuisine": "Mexican Cuisine",
@@ -16,42 +15,35 @@
       "Menu": {
         "items": [
           {
-            "id": 1,
             "name": "Spicy Jalapeno Burrito",
-            "image": "/Images/food1",
             "description": "Fried Jalepe�os, Onion + Cilantro, Sour Cream, Cheese, Pinto or Black Beans + Rice",
-            "price": "9.35",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_spicyJalapenoBurito.png",
+            "price": "$9.35",
             "cooktimeinminutes": "2",
-            "totalOrders": "2",
-            "calories": "10"
+            "totalOrders": "2"
           },
           {
-            "id": 2,
             "name": "Burrito Grande",
-            "image": "/Images/food2",
             "description": "Pinto or Black Beans, Rice, Guacamole, Cheese + Pico De Gallo Salsa",
-            "price": "9.35",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_BurritoGrande.png",
+            "price": "$9.35",
             "cooktimeinminutes": "4",
-            "totalOrders": "3",
-            "calories": "10"
+            "totalOrders": "3"
           },
           {
-            "id": 3,
             "name": "Burrito Acapulco",
-            "image": "/Images/food3",
             "description": "Guacamole, Cheese + Pico De Gallo Salsa",
-            "price": "8.14",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_BurritoAcapulco.png",
+            "price": "$8.14",
             "cooktimeinminutes": "2",
-            "totalOrders": "11",
-            "calories": "10"
+            "totalOrders": "11"
           }
         ]
       }
     },
     {
-      "id": 2,
       "name": "Boardwalk",
-      "image": "/Images/restaurent2",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/r_boardwalk.jpg",
       "telephone": "5615551212",
       "priceRange": "$5 - $30",
       "servesCuisine": "Mexican Cuisine",
@@ -64,42 +56,35 @@
       "Menu": {
         "items": [
           {
-            "id": 1,
             "name": "Cheddar Garlic Waffle Fries",
-            "image": "/Images/food4",
             "description": "Beecher�s Flagship Cheese Sauce, Crisp Bacon, Scallions",
-            "price": "6",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/f_CheddarGarlicWaffleFries.png",
+            "price": "$6",
             "cooktimeinminutes": "3",
-            "totalOrders": "4",
-            "calories": "20"
+            "totalOrders": "4"
           },
           {
-            "id": 2,
             "name": "Summer Watermelon Salad",
-            "image": "/Images/food5",
             "description": "Watermelon, Heirloom Cherry Tomatoes, Arugula , Feta Cheese, Watermelon Radish, Shallot, Cucumber Spiced Pistachio, Sherry Vinaigrette, Fresh Basil, Mint",
-            "price": "8",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/f_SummerWatermelonSalad.png",
+            "price": "$8",
             "cooktimeinminutes": "2",
-            "totalOrders": "4",
-            "calories": "20"
+            "totalOrders": "4"
           },
           {
-            "id": 3,
             "name": "Fries",
-            "image": "/Images/food6",
             "description": "Seasoned French Fries",
-            "price": "5",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/f_CheddarGarlicWaffleFries.png",
+            "price": "$5",
             "cooktimeinminutes": "2",
-            "totalOrders": "3",
-            "calories": "20"
+            "totalOrders": "3"
           }
         ]
       }
     },
     {
-      "id": 3,
       "name": "chandys",
-      "image": "/Images/restaurent3",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/chandys/r_chandys.png",
       "telephone": "5615551212",
       "priceRange": "$4 - $30",
       "servesCuisine": "American",
@@ -112,34 +97,28 @@
       "Menu": {
         "items": [
           {
-            "id": 1,
             "name": "American Comfort Vegetarian Plate",
-            "image": "/Images/food7",
             "description": "Roasted Mixed Vegetables, Mashed Potatoes + Beet Salad",
-            "price": "10.18",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/chandys/f_AmericanComfortVegetarianPlate.png",
+            "price": "$10.18",
             "cooktimeinminutes": "3",
-            "totalOrders": "3",
-            "calories": "30"
+            "totalOrders": "3"
           },
           {
-            "id": 2,
             "name": "BBQ Brisket Sandwich",
-            "image": "/Images/food8",
             "description": "Served On Macrina Brioche Bun With House Aioli, BBQ Sauce + Coleslaw. Comes With Chips + Chocolate Chip Cookie",
-            "price": "10.18",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/chandys/f_BBQBrisketSandwich.jpg",
+            "price": "$10.18",
             "cooktimeinminutes": "5",
-            "totalOrders": "3",
-            "calories": "30"
+            "totalOrders": "3"
           },
           {
-            "id": 3,
             "name": "Signature Magnolia Banana Pudding",
-            "image": "/Images/food9",
             "description": "Signature Magnolia Banana Pudding",
-            "price": "4.40",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/chandys/f_AmericanComfortVegetarianPlate.jpg",
+            "price": "$4.40",
             "cooktimeinminutes": "1",
-            "totalOrders": "12",
-            "calories": "30"
+            "totalOrders": "12"
           }
         ]
       }
