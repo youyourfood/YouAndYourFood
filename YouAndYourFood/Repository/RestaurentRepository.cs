@@ -26,7 +26,7 @@ public class RestaurentRepository : IRestaurentRepository
         return preferences;
     }
 
-    public UsersPreferencesCollection SaveUserPreferences(UsersPreferencesCollection preferences)
+    public async Task<UsersPreferencesCollection> SaveUserPreferences(UsersPreferencesCollection preferences)
     {
         StreamWriter file = new("./Models/preferences.json");
         string data = JsonConvert.SerializeObject(preferences);
@@ -35,14 +35,14 @@ public class RestaurentRepository : IRestaurentRepository
             file.WriteLineAsync(data);
             file.Close();
         }
-        catch
+        catch(Exception ex)
         {
-            throw;
+            throw new Exception("preference is not added successfully");
         }
         return PreferencesDataReader();
     }
 
-    public UsersPreferencesCollection GetUsersPreferences()
+    public async Task<UsersPreferencesCollection> GetUsersPreferences()
     {
         return PreferencesDataReader();
     }
@@ -95,5 +95,10 @@ public class RestaurentRepository : IRestaurentRepository
 
             throw new Exception("Dinning data is not available.");
         }
+    }
+
+    public async Task<UserPreferences> GetUserPreferences(string username)
+    {
+        return PreferencesDataReader().GetUserPreferences(username);
     }
 }

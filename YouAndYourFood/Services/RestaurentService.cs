@@ -16,14 +16,14 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public UsersPreferencesCollection GetUsersPreferences()
+        public async Task<UsersPreferencesCollection> GetUsersPreferences()
         {
-            return restaurentRepository.GetUsersPreferences();
+            return await restaurentRepository.GetUsersPreferences();
         }
 
         public async Task<UsersPreferencesCollection> AddPreference(Preference preference, string username)
         {
-            UsersPreferencesCollection usersPreferencesCollection = GetUsersPreferences();
+            UsersPreferencesCollection usersPreferencesCollection = await GetUsersPreferences();
             if (usersPreferencesCollection != null && usersPreferencesCollection.UsersPreferences != null 
                 && usersPreferencesCollection.UsersPreferences.Any(user => user.Username == username))
             {
@@ -45,7 +45,7 @@ namespace YouAndYourFood.Services
                 usersPreferencesCollection.AddNewUserPreference(userPreferences);
             }
 
-            return restaurentRepository.SaveUserPreferences(usersPreferencesCollection);
+            return await restaurentRepository.SaveUserPreferences(usersPreferencesCollection);
         }
 
         public async Task<RestaurantsData> GetRestaurent()
@@ -56,6 +56,11 @@ namespace YouAndYourFood.Services
         async Task<RestaurantsData> IRestaurentService.GetRestaurents()
         {
             return await restaurentRepository.GetRestaurents();
+        }
+
+        public async Task<UserPreferences> GetUserPreferences(string username)
+        {
+            return await restaurentRepository.GetUserPreferences(username);
         }
     }
 }
