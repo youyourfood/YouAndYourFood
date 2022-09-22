@@ -15,15 +15,13 @@ public class RestaurentRepository : IRestaurentRepository
     private RestaurantsData RestaurantDataReader()
     {
         string data = System.IO.File.ReadAllText("./Models/json.json");
-        RestaurantsData restaurents = JsonConvert.DeserializeObject<RestaurantsData>(data);
-        return restaurents;
+        return (data == null) ? new RestaurantsData() : JsonConvert.DeserializeObject<RestaurantsData>(data);
     }
 
     private UsersPreferencesCollection PreferencesDataReader()
     {
         string data = System.IO.File.ReadAllText("./Models/preferences.json");
-        UsersPreferencesCollection preferences = JsonConvert.DeserializeObject<UsersPreferencesCollection>(data);
-        return preferences;
+        return (data == null) ? new UsersPreferencesCollection(): JsonConvert.DeserializeObject<UsersPreferencesCollection>(data);
     }
 
     public async Task<UsersPreferencesCollection> SaveUserPreferences(UsersPreferencesCollection preferences)
@@ -37,7 +35,7 @@ public class RestaurentRepository : IRestaurentRepository
         }
         catch
         {
-            throw;
+            throw new Exception("Preference not saved");
         }
         return PreferencesDataReader();
     }
@@ -52,7 +50,7 @@ public class RestaurentRepository : IRestaurentRepository
         return await readDinningData();
     }
 
-    async Task<RestaurantsData> IRestaurentRepository.GetRestaurents()
+    public async Task<RestaurantsData> GetRestaurents()
     {
         return await readDinningData(); ;
     }

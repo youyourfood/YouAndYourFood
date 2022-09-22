@@ -25,7 +25,13 @@ namespace YouAndYourFood.Controllers
             return await restaurentService.GetRestaurents();
         }
 
-        [HttpPut]
+        [HttpPut(Name = "/getUserPreferences")]
+        public UserPreferences GetUserPreferences(string username)
+        {
+            return restaurentService.GetUserPreferences(username);
+        }
+
+        [HttpPut(Name = "/addUserPreference")]
         public Task<UsersPreferencesCollection> AddPreference(Preference preference, string username)
         {
             return restaurentService.AddPreference(preference, username);

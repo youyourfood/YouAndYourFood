@@ -6,6 +6,8 @@ public interface IRestaurentService
 {
     Task<UsersPreferencesCollection> GetUsersPreferences();
 
+    UserPreferences GetUserPreferences(string username);
+
     Task<UsersPreferencesCollection> AddPreference(Preference preference, string username);
 
     Task<RestaurantsData> GetRestaurents();

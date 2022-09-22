@@ -16,14 +16,19 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public async Task<UsersPreferencesCollection> GetUsersPreferences()
+        public Task<UsersPreferencesCollection> GetUsersPreferences()
         {
             return restaurentRepository.GetUsersPreferences();
         }
 
+        public UserPreferences GetUserPreferences(string username)
+        {
+            return restaurentRepository.GetUsersPreferences().Result.GetUserPreferences(username);
+        }
+
         public async Task<UsersPreferencesCollection> AddPreference(Preference preference, string username)
         {
-            UsersPreferencesCollection usersPreferencesCollection = GetUsersPreferences();
+            UsersPreferencesCollection usersPreferencesCollection = await GetUsersPreferences();
             if (usersPreferencesCollection != null && usersPreferencesCollection.UsersPreferences != null 
                 && usersPreferencesCollection.UsersPreferences.Any(user => user.Username == username))
             {
@@ -45,7 +50,7 @@ namespace YouAndYourFood.Services
                 usersPreferencesCollection.AddNewUserPreference(userPreferences);
             }
 
-            return restaurentRepository.SaveUserPreferences(usersPreferencesCollection);
+            return await restaurentRepository.SaveUserPreferences(usersPreferencesCollection);
         }
 
         public async Task<RestaurantsData> GetRestaurent()
@@ -53,7 +58,7 @@ namespace YouAndYourFood.Services
             return await restaurentRepository.GetRestaurent();
         }
 
-        async Task<RestaurantsData> IRestaurentService.GetRestaurents()
+        public async Task<RestaurantsData> GetRestaurents()
         {
             return await restaurentRepository.GetRestaurents();
         }
