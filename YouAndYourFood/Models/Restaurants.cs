@@ -58,13 +58,6 @@ namespace YouAndYourFood.Models
         {
             get
             {
-                int waitingTime = int.MaxValue;
-                foreach(Item item in Menu.Items)
-                {
-                    waitingTime = (int)((item.WaitingTime < waitingTime) ? item.WaitingTime : waitingTime);
-                }
-                return waitingTime;
-            } 
                 return Menu.Items.Min(x => x.WaitingTime);
             }
         }
