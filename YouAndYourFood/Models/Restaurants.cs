@@ -1,6 +1,9 @@
 ﻿using Newtonsoft.Json;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System;
 using System.Net;
+using System.Runtime.InteropServices;
 
 namespace YouAndYourFood.Models
 {
@@ -55,9 +58,15 @@ namespace YouAndYourFood.Models
         {
             get
             {
+                int waitingTime = int.MaxValue;
+                foreach(Item item in Menu.Items)
+                {
+                    waitingTime = (int)((item.WaitingTime < waitingTime) ? item.WaitingTime : waitingTime);
+                }
+                return waitingTime;
+            } 
                 return Menu.Items.Min(x => x.WaitingTime);
             }
-            set { }
         }
 
         public int? MaxWaitingTime
@@ -67,7 +76,6 @@ namespace YouAndYourFood.Models
                 return Menu.Items.Max(x => x.WaitingTime);
 
             }
-            set { }
         }
     }
 
@@ -102,7 +110,7 @@ namespace YouAndYourFood.Models
             get { return new Random().Next(1, 25); }
         }
 
-        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } set { } }
+        public int? WaitingTime { get { return Cooktimeinminutes * TotalOrders; } }
 
         public int? Calories { get; set; } = new Random().Next(100, 500);
     }
