@@ -33,13 +33,8 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        public string Image
-        {
-            get
-            {
-                return "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/" + Name + "/r_" + Name + ".jpg?raw=true";
-            }
-        }
+        [JsonProperty("image")]
+        public string Image { get; set; }
 
         [JsonProperty("telephone")]
         public string Telephone { get; set; }
@@ -91,13 +86,8 @@ namespace YouAndYourFood.Models
         public string Name { get; set; }
 
         [JsonProperty("image")]
-        public string? Image
-        {
-            get
-            {
-                return "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/" + Name + "/f_" + Name + ".jpg?raw=true";
-            }
-        }
+        public string? Image { get; set; }
+
         [JsonProperty("description")]
         public string Description { get; set; }
 
