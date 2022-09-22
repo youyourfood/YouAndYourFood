@@ -4,9 +4,9 @@ namespace YouAndYourFood.Services;
 
 public interface IRestaurentService
 {
-    UsersPreferencesCollection GetUsersPreferences();
+    Task<UsersPreferencesCollection> GetUsersPreferences();
 
-    UsersPreferencesCollection AddPreference(Preference preference, string username);
+    Task<UsersPreferencesCollection> AddPreference(Preference preference, string username);
 
     Task<RestaurantsData> GetRestaurents();
     
