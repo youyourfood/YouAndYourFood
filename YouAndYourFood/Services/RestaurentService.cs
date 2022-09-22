@@ -16,7 +16,7 @@ namespace YouAndYourFood.Services
             this.restaurentRepository = restaurentRepository;
         }
 
-        public async Task<UsersPreferencesCollection> GetUsersPreferences()
+        public UsersPreferencesCollection GetUsersPreferences()
         {
             return restaurentRepository.GetUsersPreferences();
         }

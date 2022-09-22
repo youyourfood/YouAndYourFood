@@ -26,7 +26,7 @@ public class RestaurentRepository : IRestaurentRepository
         return preferences;
     }
 
-    public async Task<UsersPreferencesCollection> SaveUserPreferences(UsersPreferencesCollection preferences)
+    public UsersPreferencesCollection SaveUserPreferences(UsersPreferencesCollection preferences)
     {
         StreamWriter file = new("./Models/preferences.json");
         string data = JsonConvert.SerializeObject(preferences);
@@ -42,7 +42,7 @@ public class RestaurentRepository : IRestaurentRepository
         return PreferencesDataReader();
     }
 
-    public async Task<UsersPreferencesCollection> GetUsersPreferences()
+    public UsersPreferencesCollection GetUsersPreferences()
     {
         return PreferencesDataReader();
     }
