@@ -60,7 +60,6 @@ namespace YouAndYourFood.Models
                 }
                 return waitingTime;
             } 
-            set { } 
         }
 
         public int? MaxWaitingTime { 
@@ -74,7 +73,6 @@ namespace YouAndYourFood.Models
                 return waitingTime;
 
             }
-            set { } 
         }
     }
 
@@ -92,9 +90,6 @@ namespace YouAndYourFood.Models
         [JsonProperty("name")]
         public string Name { get; set; }
 
-        [JsonProperty("image")]
-        public string? Image { get; set; }
-        
         public string? Image { get; set; } = "https://th.bing.com/th/id/R.172256cfff359c09905376e51a4fa2ba?rik=%2bzzR79VqI5HVDw&pid=ImgRaw&r=0";
 
         [JsonProperty("description")]
@@ -109,11 +104,11 @@ namespace YouAndYourFood.Models
         [JsonProperty("totalOrders")]
         public string TotalOrders { get; set; }
 
-        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } set { } }
+        public int? WaitingTime { get { return int.Parse(Cooktimeinminutes) * int.Parse(TotalOrders); } }
 
         public int? Calories { get; set; }
 
-        public int? Star { get; set; } = 10;
+        public int? Star { get; set; }
     }
 
 }

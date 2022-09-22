@@ -24,5 +24,11 @@ namespace YouAndYourFood.Controllers
         {
             return restaurentService.GetRestaurents();
         }
+
+        [HttpPut]
+        public UsersPreferencesCollection AddPreference(Preference preference, string username)
+        {
+            return restaurentService.AddPreference(preference, username);
+        }
     }
 }
