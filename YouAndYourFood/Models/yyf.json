@@ -20,7 +20,9 @@
             "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_spicyJalapenoBurito.png?raw=true",
             "price": "$9.35",
             "cooktimeinminutes": "2",
-            "totalOrders": "2"
+            "totalOrders": "2",
+            "rating": "**",
+            "note": "spicy."
           },
           {
             "name": "Burrito Grande",
@@ -36,7 +38,8 @@
             "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_BurritoAcapulco.png?raw=true",
             "price": "$8.14",
             "cooktimeinminutes": "2",
-            "totalOrders": "11"
+            "totalOrders": "11",
+            "rating": "*****"
           }
         ]
       }
@@ -61,7 +64,9 @@
             "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/f_CheddarGarlicWaffleFries.png?raw=true",
             "price": "$6",
             "cooktimeinminutes": "3",
-            "totalOrders": "4"
+            "totalOrders": "4",
+            "rating": "*****",
+            "note": "Very tasty."
           },
           {
             "name": "Summer Watermelon Salad",
@@ -69,7 +74,9 @@
             "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/boardwalk/f_SummerWatermelonSalad.png?raw=true",
             "price": "$8",
             "cooktimeinminutes": "2",
-            "totalOrders": "4"
+            "totalOrders": "4",
+            "rating": "*****",
+            "note": "Super healthy and tasty."
           },
           {
             "name": "Fries",
@@ -102,7 +109,9 @@
             "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/chandys/f_AmericanComfortVegetarianPlate.png?raw=true",
             "price": "$10.18",
             "cooktimeinminutes": "3",
-            "totalOrders": "3"
+            "totalOrders": "3",
+            "rating": "*****",
+            "note": "Roasted and smoky."
           },
           {
             "name": "BBQ Brisket Sandwich",
@@ -119,6 +128,109 @@
             "price": "$4.40",
             "cooktimeinminutes": "1",
             "totalOrders": "12"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Gather + Co.",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/gather/r_Gather.png?raw=true",
+      "telephone": "5615551212",
+      "priceRange": "$8 - $30",
+      "servesCuisine": "Mexican Cuisine",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "Sandwich",
+            "description": "Fried Jalepe�os, Onion + Cilantro, Sour Cream, Cheese, Pinto or Black Beans + Rice",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/gather/f_Whole-BuildYourOwnSandwich.png?raw=true",
+            "price": "$9.35",
+            "cooktimeinminutes": "2",
+            "totalOrders": "2"
+          },
+          {
+            "name": "Roated Veg Pesto",
+            "description": "Pinto or Black Beans, Rice, Guacamole, Cheese + Pico De Gallo Salsa",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/acapulco/f_WholeRoastedVegetablePesto.png?raw=true",
+            "price": "$9.35",
+            "cooktimeinminutes": "4",
+            "totalOrders": "3"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Kalia",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/kalia/r_kalia.png?raw=true",
+      "telephone": "5615551212",
+      "priceRange": "$5 - $30",
+      "servesCuisine": "Indian Cuisine",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "Combo Rice",
+            "description": "Beecher�s Flagship Cheese Sauce, Crisp Bacon, Scallions",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/kalia/f_2ItemCombowRice.png?raw=true",
+            "price": "$9.49",
+            "cooktimeinminutes": "3",
+            "totalOrders": "4",
+            "rating": "****",
+            "note": ""
+          },
+          {
+            "name": "Roti Wrap",
+            "description": "Indian bread, Heirloom Cherry Tomatoes, Arugula , Feta Cheese, Watermelon Radish, Shallot, Cucumber Spiced Pistachio, Sherry Vinaigrette, Fresh Basil, Mint",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/kalia/f_RotiWrap.png?raw=true",
+            "price": "$8",
+            "cooktimeinminutes": "2",
+            "totalOrders": "4"
+          }
+        ]
+      }
+    },
+    {
+      "name": "PAC NW Pizza",
+      "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/pac-nw/r_pac-nw.png?raw=true",
+      "telephone": "5615551212",
+      "priceRange": "$4 - $30",
+      "servesCuisine": "Italian",
+      "address": {
+        "streetAddress": "Microsoft Commons",
+        "addressLocality": "Redmond",
+        "state": "WA",
+        "postalCode": "98052"
+      },
+      "Menu": {
+        "items": [
+          {
+            "name": "Cheese Spirit Pizza",
+            "description": "Roasted Mixed Vegetables, Mashed Potatoes + Beet Salad",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/pac-nw/f_SmellsLikeCheeseSpirit.png?raw=true",
+            "price": "$7.18",
+            "cooktimeinminutes": "3",
+            "totalOrders": "3"
+          },
+          {
+            "name": "The Pike Pizza",
+            "description": "Served On Macrina Brioche Bun With House Aioli, BBQ Sauce + Coleslaw. Comes With Chips + Chocolate Chip Cookie",
+            "image": "https://github.com/youyourfood/YouAndYourFood/blob/master/YouAndYourFood/Models/Images/pac-nw/f_ThePike.jpg?raw=true",
+            "price": "$8",
+            "cooktimeinminutes": "5",
+            "totalOrders": "3",
+            "rating": "****",
+            "note": ""
           }
         ]
       }
